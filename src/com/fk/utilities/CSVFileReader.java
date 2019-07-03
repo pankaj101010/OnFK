@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
-import com.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVReader;
 
 public class CSVFileReader {
 	public String filePath = "";
@@ -14,7 +13,7 @@ public class CSVFileReader {
 	private File file;
 	private FileReader fr;
 	private BufferedReader br;
-	private String s;
+	private String s="";
 
 	public CSVFileReader(String filePath) {
 		this.filePath = filePath;
@@ -34,7 +33,7 @@ public class CSVFileReader {
 		while ((s = br.readLine()) != null) {
 			data[0]++;
 			String[] csvvalues = s.split(",");
-		//	System.out.println(Arrays.deepToString(csvvalues));
+			// System.out.println(Arrays.deepToString(csvvalues));
 			data[1] = csvvalues.length;
 		}
 		return data;
